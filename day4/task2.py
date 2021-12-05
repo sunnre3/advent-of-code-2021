@@ -23,9 +23,11 @@ numbers = []
 boards = []
 
 with open('./inputs.txt', 'r') as file:
-    numbers = list(map(int, file.readline().split(',')))
+    lines = file.readlines()
+    last = lines[-1]
+    numbers = list(map(int, lines[0].split(',')))
     board = []
-    for line in file:
+    for line in lines[1:]:
         if len(line) > 1:
             row = []
             for num in line.strip().replace('  ', ' ').split(' '):
@@ -34,6 +36,8 @@ with open('./inputs.txt', 'r') as file:
                     "marked": False
                 })
             board.append(row)
+            if line == last:
+                boards.append(board)
         else:
             if len(board) > 0:
                 boards.append(board)
