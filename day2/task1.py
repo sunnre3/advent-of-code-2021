@@ -8,7 +8,7 @@ def get_int_from_string(str):
         if word.isdigit():
             return int(word)
 
-with open('inputs.txt', 'r') as file:
+with open('./inputs.txt', 'r') as file:
     for line in file:
         if 'up' in line:
             depth_inputs.append(-abs(get_int_from_string(line)))
