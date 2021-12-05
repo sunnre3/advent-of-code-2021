@@ -12,7 +12,6 @@ for inp in inputs:
     for idx, val in enumerate(list(inp)):
         arr[idx] = int(arr[idx]) + int(val)
 
-
 gamma = ''
 epsilon = ''
 
