@@ -7,7 +7,6 @@ def boardHasBingo(board):
             if number["marked"] == True:
                 numOfMarked += 1
         if numOfMarked == len(row):
-            print('a', row)
             return True
 
     for pos in range(len(board[0])):
@@ -16,7 +15,6 @@ def boardHasBingo(board):
             if row[pos]["marked"] == True:
                 numOfMarked += 1
         if numOfMarked == len(board):
-            print('b', pos)
             return True
 
     return False
@@ -49,7 +47,6 @@ for calledNumber in numbers:
                 if num["number"] == calledNumber:
                     num["marked"] = True
         if boardHasBingo(board):
-            print(calledNumber)
             sumOfUnmarked = 0
             for row in board:
                 for num in row:
